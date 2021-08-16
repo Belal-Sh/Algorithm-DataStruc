@@ -8,6 +8,17 @@
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 
 function capitalize(str) {
+  let capArr = [];
+  let strArr = str.split(' ');
+  for (var i = 0; i < strArr.length; i++) {
+    capArr.push(capital(strArr[i]));
+  }
+  return capArr.join(' ')
 
+
+}
+
+function capital(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
 }
 module.exports = capitalize;
