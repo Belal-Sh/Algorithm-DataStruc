@@ -15,7 +15,23 @@
 //       '#####'
 
 function pyramid(n, row = 0, level = '') {
+  const col = n + (n - 1);
+  const f = Math.floor(col / 2);
+  if (n === row) {
+    return;
+  }
 
+  if (col === level.length) {
+    console.log(level);
+    return pyramid(n, row + 1)
+  }
+
+  if (level.length <= (f + row) && level.length >= (f - row)) {
+    level += "#";
+  } else {
+    level += " ";
+  }
+  pyramid(n, row, level)
 }
 
 module.exports = pyramid;
